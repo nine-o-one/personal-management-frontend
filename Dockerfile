@@ -23,7 +23,7 @@ FROM nginx:alpine
 # Remove default Nginx static assets
 RUN rm -rf /usr/share/nginx/html/*
 
-COPY --from=build /app/dist/pm_management/browser /usr/share/nginx/html
+COPY --from=build /app/dist/personal-mgmt-app/browser /usr/share/nginx/html
 
 # Copy a custom Nginx configuration to handle SPA routing (see below)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
